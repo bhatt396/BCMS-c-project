@@ -1,5 +1,4 @@
-edit possible hehe
-								// BANK CUSTOMER MANAGEMENT SYSTEM
+						// BANK CUSTOMER MANAGEMENT SYSTEM
 
 
 #include<stdio.h>
@@ -564,7 +563,11 @@ int main()
             menu();
         }
     else
-        {   printf("\n\nWrong password!!\a\a\a");
+        {   
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+        SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
+		
+		printf("\n\nWrong password!!\a\a\a");
             login_try:
             printf("\nEnter 1 to try again and 0 to exit:");
             scanf("%d",&main_exit);
